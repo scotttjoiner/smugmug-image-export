@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "download-smugmug"
+version = "0.1.0"
+description = "SmugMug bulk downloader CLI"
+authors = ["scotttjoiner <scotttjoiner@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "img_pull", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+httpx = "^0.28"
+pydantic-settings = "^2.4"
+rich = "^13"
+tenacity = "^9"
+tqdm = "^4.66"
+python-dotenv = "^1.0"
+click = "8.1.7"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.10"          # or your exact ^25.1.0 if you prefer
+flake8 = "^7.1"
+pytest = "^8.3"
+python-dotenv = "^1.0"    # handy in tests
+pytest-cov = "^7.0.0"
+pre-commit = "^4.3.0"
+
+[tool.poetry.scripts]
+smugpull = "img_pull.cli.main:main"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]  # use ["py311"] if on 3.11
+include = "\\.pyi?$"
+
+[tool.flake8]
+max-line-length = 100
+extend-ignore = ["E203", "W503"]  # plays nice with Black
+exclude = [".venv", "build", "dist", ".git", "__pycache__"]
+
+[tool.pytest.ini_options]
+addopts = "-q --cov=img_pull --cov-report=term-missing"
+testpaths = ["tests"]
