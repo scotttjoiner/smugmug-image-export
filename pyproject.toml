@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "SmugMug bulk downloader CLI"
 authors = ["scotttjoiner <scotttjoiner@gmail.com>"]
 readme = "README.md"
-packages = [{ include = "img_pull", from = "src" }]
+packages = [{ include = "smugpull", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.12"
@@ -25,7 +25,7 @@ pytest-cov = "^7.0.0"
 pre-commit = "^4.3.0"
 
 [tool.poetry.scripts]
-smugpull = "img_pull.cli.main:main"
+smugpull = "smugpull.cli.main:main"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
@@ -42,5 +42,5 @@ extend-ignore = ["E203", "W503"]  # plays nice with Black
 exclude = [".venv", "build", "dist", ".git", "__pycache__"]
 
 [tool.pytest.ini_options]
-addopts = "-q --cov=img_pull --cov-report=term-missing"
+addopts = "-q --cov=smgpull --cov-report=term-missing"
 testpaths = ["tests"]

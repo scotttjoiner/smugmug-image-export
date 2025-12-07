@@ -11,7 +11,7 @@ download-smugmug/
 ├── pyproject.toml              # Poetry project definition
 ├── Makefile                    # Dev shortcuts (install, test, run)
 ├── src/
-│   └── img_pull/
+│   └── smugpull/
 │       ├── __init__.py
 │       └── cli/
 │           ├── __init__.py
@@ -76,10 +76,10 @@ make requirements # export requirements.txt (for non-Poetry envs)
 poetry shell
 
 # Run the CLI during development without installing as a script
-python -m img_pull.cli.main version
+python -m smugpull.cli.main version
 ```
 
-Tests are src-layout-aware; imports should be `from img_pull...`, not `from src.img_pull...`
+Tests are src-layout-aware; imports should be `from smugpull...`, not `from src.smugpull...`
 
 ---
 

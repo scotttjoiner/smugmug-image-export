@@ -1,4 +1,4 @@
-# src/img_pull/cli/main.py
+# src/smugpull/cli/main.py
 import importlib.metadata as md
 import click
 

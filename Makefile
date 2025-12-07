@@ -11,7 +11,7 @@ fmt:
 	$(POETRY) run black .
 
 lint:
-	$(POETRY) run flake8 src tests
+	$(POETRY) run flake8 src tes
 
 test:
 	$(POETRY) run pytest
